@@ -80,6 +80,7 @@
     --color-cta-gradient1: var(--c-gray-dark);
     --color-cta-gradient2: var(--c-purple);
     --color-cta-gradient3: var(--c-teal);
+    --color-footer-link-hover: var(--c-magenta);
   }
 
   *,
@@ -153,6 +154,12 @@
     max-width: 100%;
     display: block;
     height: auto;
+  }
+
+  header ul,
+  footer ul {
+    list-style-type: none;
+    padding: 0;
   }
 
   .wrapper {
@@ -246,9 +253,6 @@
     }
 
     .topnav__homelink {
-      &:hover {
-        opacity: 0.9;
-      }
     }
 
     .topnav__logo {
@@ -262,8 +266,6 @@
     .topnav__links {
       display: flex;
       gap: 20px;
-      list-style-type: none;
-      padding: 0;
 
       @media (width >= calc(600 / 16 * 1rem)) {
         gap: 40px;
@@ -467,6 +469,77 @@
     .fw-cta__description {
     }
   }
+
+  .footer {
+    .footer__wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px 20px;
+
+      @media (width >= calc(600 / 16 * 1rem)) {
+        grid-template-columns: repeat(4, auto);
+      }
+    }
+
+    .footer__top {
+      grid-column: 1 / -1;
+    }
+
+    .footer__homelink {
+      display: block;
+      width: fit-content;
+    }
+
+    .footer__logo {
+      width: calc(128 / 16 * 1rem);
+      margin-block-end: 10px;
+    }
+
+    .footer__copyright {
+    }
+
+    .footer__column {
+    }
+
+    .footer__title {
+      font-size: calc(22 / 16 * 1rem);
+      margin-block-end: 6px;
+    }
+
+    .footer__links {
+      display: grid;
+      gap: 6px;
+    }
+
+    .footer__item {
+    }
+
+    .footer__link {
+      font-size: calc(18 / 16 * 1rem);
+      color: var(--color-text-dark);
+      transition: color 150ms ease-in-out;
+      display: inline-flex;
+      gap: 16px;
+      align-items: center;
+
+      &:hover {
+        color: var(--color-footer-link-hover);
+
+        .footer__social-path {
+          fill: var(--color-footer-link-hover);
+        }
+      }
+    }
+
+    .footer__social-svg {
+      width: calc(18 / 16 * 1rem);
+    }
+
+    .footer__social-path {
+      fill: var(--color-text-dark);
+      transition: fill 150ms ease-in-out;
+    }
+  }
 }
 
 @layer utility {
@@ -485,6 +558,14 @@
       background: #fff;
       padding: 10px;
       border: 1px solid;
+    }
+  }
+
+  .hover-fade {
+    transition: opacity 150ms ease-in-out;
+    
+    &:hover {
+      opacity: 0.8;
     }
   }
 }
