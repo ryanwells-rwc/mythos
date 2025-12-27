@@ -469,6 +469,10 @@
       background-size: calc(100% + 10px) auto;
     }
 
+    @media (width >= calc(2000 / 16 * 1rem)) {
+      background-size: calc(100% + 10px) 100px;
+    }
+
     .hero__wrapper {
       display: grid;
       padding-block: 30px 120px;
